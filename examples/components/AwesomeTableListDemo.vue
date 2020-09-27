@@ -1,10 +1,5 @@
 <template>
   <div class="layout-content-list">
-    <el-breadcrumb separator=">">
-      <el-breadcrumb-item>商户管理</el-breadcrumb-item>
-      <el-breadcrumb-item>商户列表</el-breadcrumb-item>
-    </el-breadcrumb>
-
     <awesome-table-list
       ref="awesomeTable"
       border
@@ -55,24 +50,24 @@
 // import Validator from '@/utils/Validator';
 
 export default {
-  mixins: [listMixin],
+  // mixins: [listMixin],
   components: {
     AwesomeTableList,
   },
   data: function() {
-    // 验证手机号
-    var validatePhone = (rule, value, callback) => {
-      if (!Validator.phone(value)) {
-        callback(new Error(rule.message));
-      }
-      callback();
-    };
-    var validateMax = (rule, value, callback) => {
-      if (value > 100) {
-        callback(new Error(rule.message));
-      }
-      callback();
-    };
+    // // 验证手机号
+    // var validatePhone = (rule, value, callback) => {
+    //   if (!Validator.phone(value)) {
+    //     callback(new Error(rule.message));
+    //   }
+    //   callback();
+    // };
+    // var validateMax = (rule, value, callback) => {
+    //   if (value > 100) {
+    //     callback(new Error(rule.message));
+    //   }
+    //   callback();
+    // };
     return {
       /**
        * 筛选form
@@ -141,7 +136,7 @@ export default {
           },
           validate: [
             // { required: true, message: '请输入手机号', trigger: 'blur' },
-            { validator: validatePhone, message: '请输入有效的手机号', trigger: 'blur' },
+            // { validator: validatePhone, message: '请输入有效的手机号', trigger: 'blur' },
           ],
           nativeOn: {
             keyup: (event) => {
@@ -271,18 +266,17 @@ export default {
     };
   },
   async created() {
-    const dict = await utils.getSysdict();
-    this.companyTypeArr = dict.companyType; //商户类型
-
-    this.formRules.forEach((item) => {
-      if (item.type === 'select' && item.field === 'companyType') {
-        item.options = this.companyTypeArr;
-      }
-    });
-    console.log(this.formRules);
+    // const dict = await utils.getSysdict();
+    // this.companyTypeArr = dict.companyType; //商户类型
+    // this.formRules.forEach((item) => {
+    //   if (item.type === 'select' && item.field === 'companyType') {
+    //     item.options = this.companyTypeArr;
+    //   }
+    // });
+    // console.log(this.formRules);
   },
   mounted() {
-    this.onInit();
+    // this.onInit();
   },
   methods: {
     onInit() {

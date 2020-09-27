@@ -1,19 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="onShowComponent('TABLE')">表格 demo</button>
+    <br />
+    <button @click="onShowComponent('BUTTON')">Button demo</button>
+
+    <component :is="currentComponent"></component>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+const ButtonDemo = () => import('./components/ButtonDemo.vue');
+const EditTableDemo = () => import('./components/EditTableDemo.vue');
+// const AwesomeTableListDemo = () => import('./components/AwesomeTableListDemo.vue');
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      currentComponent: null,
+    };
+  },
+  methods: {
+    onShowComponent(componentType) {
+      switch (componentType) {
+        case 'TABLE':
+          this.currentComponent = EditTableDemo;
+          break;
+        case 'BUTTON':
+          this.currentComponent = ButtonDemo;
+          break;
+      }
+    },
+  },
+};
 </script>
 
 <style>

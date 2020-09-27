@@ -1,18 +1,36 @@
 {
-  "name": "npm-demo",
+  "name": "awesome-table-list",
   "version": "1.0.0",
   "private": false,
-  "description": "基于 Vue 的表格&列表组件，表格支持可编辑，通过配置项实现表格，列表动态渲染，一行代码搞定列表页",
-  "main": "",
-  "keyword": "edit-table table-list",
+  "description": "基于 Vue、Element 的表格&列表组件，一行代码搞定列表页, 表格支持可编辑。",
+  "main": "lib/awesome-table-list.common.js",
+  "keyword": [
+    "vue",
+    "element-ui",
+    "edit-table",
+    "table-list",
+    "form"
+  ],
+  "author": "louiscd@126.com",
+  "homepage": "https://github.com/Louiscd/awesome-table-list",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Louiscd/awesome-table-list.git"
+  },
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name awesome-table-list --dest lib packages/index.js"
+  },
+  "peerDependencies": {
+    "element-ui": "^2.13.2",
+    "vue": "^2.6.11"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "@form-create/element-ui": "^1.0.19",
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",
@@ -21,7 +39,10 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "node-sass": "^4.9.3",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0"
   },
   "eslintConfig": {
     "root": true,
