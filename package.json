@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "description": "基于 Vue、Element 的表格&列表组件，一行代码搞定列表页, 表格支持可编辑。",
-  "main": "lib/awesome-table-list.common.js",
+  "main": "lib/awesome-table-list.umd.js",
   "keyword": [
     "vue",
     "element-ui",
