@@ -60,10 +60,10 @@
   </div>
 </template>
 <script>
-import formCreate from '@form-create/element-ui';
+// import formCreate from '@form-create/element-ui';
 export default {
   name: 'AwesomeTableList',
-  components: { formCreate },
+  // components: { formCreate },
   props: {
     /**
      * 列表筛选
